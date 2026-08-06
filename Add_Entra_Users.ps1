@@ -7,7 +7,7 @@
 # 1. Open PowerShell with administrative privileges.
 # 2. Run the script and provide the required user details as prompted.
 
-# Using MgGraph
+<# # Using MgGraph
 ##Connect-MgGraph -Scopes "User.ReadWrite.All"
 Install-Module Microsoft.Graph -Scope CurrentUser
 
@@ -24,10 +24,12 @@ New-MgUser -DisplayName "Jane Doe" `
            -MailNickname "jdoe" `
            -UserPrincipalName "jdoe@yourdomain.com" `
            -AccountEnabled $true `
-           -PasswordProfile $PasswordProfile
+           -PasswordProfile $PasswordProfile;
 
-
+##################################################################
 # Or using Microsoft.Entra ID module
+##################################################################
+
 Install-Module Microsoft.Entra -Scope CurrentUser
 
 Connect-Entra -Scopes "User.ReadWrite.All"
@@ -41,5 +43,6 @@ New-EntraUser -DisplayName "Jane Doe" `
               -MailNickname "jdoe" `
               -UserPrincipalName "jdoe@yourdomain.com" `
               -AccountEnabled $true `
-              -PasswordProfile $PasswordProfile
-
+              -PasswordProfile $PasswordProfile;
+ #>
+ 
