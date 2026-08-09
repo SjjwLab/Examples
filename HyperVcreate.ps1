@@ -2,11 +2,11 @@
 # Use: Quickly spin up Hyper-V VMs for testing
 
 # Define Variables
-$VMName = "Virtual Machine Name"
+$VMName = "IntuneDemo"
 $VMPath = "C:\VMs\$VMName"
 $VHDPath = "C:\VMs\$VMName.vhdx"
 $SwitchName = "Default Switch"
-$VMISO = "PATH to ISO"
+$VMISO = "C:\VM ISOs\Win11.iso"
 
 # Create VM
 New-VM -Name $VMName `
@@ -29,3 +29,7 @@ New-VM -Name $VMName `
  Set-VMDvdDrive -VMName $VMName -Path $VMISO
  # Set first boot device to DVD
  Set-VMFirmware -VMName $VMName -FirstBootDevice $(Get-VMDvdDrive -VMName "$VMName")
+
+
+ #Optional: STart VM after creation
+ Start-VM -Name $VMName
