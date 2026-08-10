@@ -29,3 +29,7 @@ New-VM -Name $VMName `
  Set-VMDvdDrive -VMName $VMName -Path $VMISO
  # Set first boot device to DVD
  Set-VMFirmware -VMName $VMName -FirstBootDevice $(Get-VMDvdDrive -VMName "$VMName")
+
+
+ #Optional: STart VM after creation
+ Start-VM -Name $VMName
